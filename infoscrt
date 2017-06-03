@@ -1,0 +1,64 @@
+#!/bin/bash
+#zmienne
+KONIEC="x";
+d=sensors
+top3=top
+
+function wybor
+{
+case $KONIEC in
+s) echo "Jesteś w katalogu : $(pwd)" ;;
+p) echo "teraz wypisze wszystkie twoje procesy";
+ps -e ;;
+w) echo "Oto lista plików w tym katalogu";
+ls ;;
+1) echo "ip" ;
+ifconfig;;
+2) echo "update systemu";
+apt-get update;;
+3) echo "Temp komputera: " ;
+$d ;; 
+4) echo "Procesy aktywne";
+$top3;;
+5) echo "Wolna pamiec ram";
+free -m;;
+6) echo "Status apche2 ";
+service apache2 status ;;
+mysql-status) echo "status mysql to : ";
+service mysql status ;;
+zmiana_jezyka) echo " ***************************** wpisz w konsole sudo dpkg-reconfigure locales ****      Pamietaj musisz miec uprawnienia roota";;
+6a) echo" Uruchomione uslugi";
+netstat -plnt ;;
+7) echo "Instalacja pakietów";
+sudo apt-get install php5 php5-mysql mysql-server mysql-client ;;
+esac;
+}
+function menu # poczatek menu
+{
+until [ $KONIEC = k ];do
+echo "Wciśnij Enter aby kontynuować";
+read;
+clear; # czyść ekran
+echo $KONIEC;
+echo " Info DEBIAN/MINT";
+echo;
+echo "k - zakończ skrypt.";
+echo "s - wyświetl ścieżkę w której znajduje się skrypt.";
+echo "p - wyświetl listę procesów użytkownika.";
+echo "w - wyświetl wszystkie pliki w tym katalogu.";
+echo "1 - info o network";
+echo "2 - update system";
+echo "3 - wyświetl temperature komputera";
+echo "4 - wyświetla aplikacje uruchomione w systemie";
+echo "5 - wyswietla pamiec ram w MB";
+echo "6 - Status serwera apache2"; 
+echo "6a - Status uslug podłaczonych do internetu";
+echo "-  mysql-status czy dziala mysql ";
+echo "-  zmiana_jezyka - zmienia jezyk potrzebny root";
+echo "7 instalacja apche2 php i mysql ****wymagane roota***** "
+echo "k - zakończ skrypt.";
+read KONIEC;
+wybor;
+done;
+}
+menu;
