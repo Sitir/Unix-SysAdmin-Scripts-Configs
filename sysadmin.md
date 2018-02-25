@@ -21,14 +21,14 @@ even after the user logs out (or exits the initiating shell).
 
 >to kill we can use pkill -f short name 
 
-** df -h**  	 
+**df -h**  	 
 >show us available space others info (very important).
 
-** mount** 	 
+**mount** 	 
 >to find where is where moutned 
 
 
-** htop**  
+**htop**  
 >better version of top, more options below:
 
 
