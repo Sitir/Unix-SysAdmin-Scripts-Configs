@@ -1,0 +1,47 @@
+# Fstab [file systems table] - config file always in /etc/fstab.
+
+# device name           mount point             fs-type       options         dump-freq pass-num       INFO
+UUID/LABAEL             /-> any place           ext4         defaults            0       0             extended file system(UNIX)
+                        expect /proc            ext3         defaults            0       1             extended file system(UNIX)
+                                                swap         defaults   
+                        /dev/pts                devpts       gid=5,mode=620      0       1             virtual filesystem 
+                        
+none                    /proc                   proc         defaults 
+none                    /dev/shm                tmpfs        defaults 
+                                                
+                                                
+                                                
+Device-spec – The device name, label, UUID, or other means of specifying the partition or data source this entry refers to.
+Mount-point – Where the contents of the device may be accessed after mounting; for swap partitions or files, this is set to none.
+Fs-type – The type of file system to be mounted.
+Options – Options describing various other aspects of the file system, such as whether it is automatically mounted at boot, which users may mount or access it, whether it may be written to or only read from, its size, and so forth; the special option defaults refers to a predetermined set of options depending on the file system type.
+Dump – A number indicating whether and how often the file system should be backed up by the dump program; a zero indicates the file system will never be automatically backed up.
+Pass – A number indicating the order in which the fsck program will check the devices for errors at boot time; this is 1 for the root file system and either 2 (meaning check after root) or 0 (do not check) for all other devices.
+
+
+
+
+Mount fileSystem(Hardrive at start) for example partition ntfs where we can storage files etc.
+
+
+# device name           mount point             fs-type       options         dump-freq pass-num       INFO
+
+UUID=C83E3F903E3F7692   /linux-utils            ntfs-3g       defaults            0        0          
+
+
+how to find UUID ->       ls -la /dev/disk/by-uuid
+
+
+defaults -> Use default settings. Default settings are defined per file system at the file system level. 
+
+auto / noauto With the auto option, the device will be mounted automatically at bootup or when the mount -a command is issued. auto is the default option.
+
+Mode Mask Settings
+      umask - user file creation
+      dmask - directory creation 
+      fmask - for files only
+      
+      
+windows_names ->       fat, ntfs
+ 
+Mac OS Extended  -> HFS+ 
