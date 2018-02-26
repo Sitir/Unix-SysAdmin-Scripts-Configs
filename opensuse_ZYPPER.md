@@ -1,8 +1,9 @@
 # ZYPPER
 **version Leap 42.3 2018**
 >After an unsuccessfully upate i have to remove and add again all repostitories.
---
-
+<br />
+----------------------------------------------
+<br />
 > first deleted all from /etc/repos.d/*
 
 **sudo rm /etc/repos.d/**
