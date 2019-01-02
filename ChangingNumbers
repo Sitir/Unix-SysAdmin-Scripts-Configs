@@ -26,3 +26,69 @@ we are cuting zeros cuz they are blank and we get
 36dec in 100100 bin
 
 
+
+(bin -> hex )
+ 15784 dec -> 0011 1101 1010 1000 bin
+ 
+ we are cutting this number  on parts which has 4 numbers starting from the right side if there are missing numbers on left side 
+ add zero or zeros to fill the gap.
+ 
+ under those number which you serparte from the right to left increase by 2 and it will be starts from 1
+ 
+  0 0 1 1    |   1 1 0 1     |   1 0 1 0    |  1 0 0 0 
+  
+  8 4 2 1        8 4 2 1         8 4 2 1       8 4 2 1
+      Y Y        Y Y             Y   Y         Y
+on each 1 on binary add those numbers togheter and you should have I putted Y on the numbers we will sum
+and convert numbers to hex so take the look up on the table!
+
+    3              D                A           8
+    
+    15784 dec -> 3DA8 hex
+    
+ 
+(hex -> bin )
+
+
+EB9FA34
+
+You should divide each letter and number on each part and keep in mind that each letter has his own number from table
+
+    E         B             9           F          A           3           4
+8 4 2 1    8 4 2 1       8 4 2 1    8 4 2 1      8 4 2 1    8 4 2 1     8 4 2 1 
+
+1 1 1 0    1 0 1 1       1 0 0 1    1 1 1 1      1 0 1 0    0 0 1 1     0 1 0 0
+
+
+TAKE LOOK THE TABLE ON HEX and you should keep in memory those numbers and represtation from letters
+
+EB9FA34 hex -> 1110101110011111101000110100 bin
+    
+    
+(bin -> oct)
+
+110 0011
+
+we diivide such bin number on the 3 parts startting from right side
+
+
+0 0 1  | 1 0 0  | 0 1 1 
+4 2 1    4 2 1    4 2 1
+    Y    Y          Y Y
+
+
+as you can see on left side at the end we had just one number of 1 so we need to add 0 so we can see exactly if everything is fine
+and I putted Y under number where stay 1 in binary.
+
+so 0110 0011 bin -> 143 oct
+
+
+
+
+Rember if you want to change numbers from another system always move them threw Binary System.
+
+ 
+ 
+ 
+ 
+
