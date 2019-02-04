@@ -80,7 +80,7 @@ Now we convert from binary to octal
 <br />
 Result: 192.168.1.128
 <br />
-###Broadcast number on NOT notations
+### Broadcast number on NOT notations
 <br />
 To get broadcast number you need to do NOT notation on the mask which means we turn all 0 to 1 and all 1 to 0  
 <br />
@@ -103,7 +103,7 @@ which in result will give: 0.0.0.127
 right now we suming previous ip which we get: 191.168.1.128 + 0.0.0.127 <br />
 result of broadcast ip: 191.168.1.255<br />
 <br />
-###How many hosts in range
+### How many hosts in range
 <br />
 <br />
 check the template up <br />
