@@ -101,16 +101,27 @@ in result we are getting binary represation which we need to turn again to octal
 which in result will give: 0.0.0.127 
 <br />
 right now we suming previous ip which we get: 191.168.1.128 + 0.0.0.127 <br />
-result of broadcast ip: 191.168.1.255<br />
+result of broadcast ip: 192.168.1.255<br />
 <br />
+
 ### How many hosts in range
+
 <br />
 <br />
 check the template up <br />
 2 * (32 bits ip  - 25 subnetmask shorted) - 2 for first and boradcast address = <br />
 2*(7)-2 = 128-2 = 126 hosts in range <br />
+<hr />
+Finaly: <br />
+ <br />
+Network ip address is:  192.168.1.145 subnetmastk: 255.255.255.128/25 <br />
+first host ip is : 192.168.1.129 and last is 192.168.1.254  broadcast ip is : 192.168.1.254
 
-
+<br />
+<br />
+To count down the last ip address in range just subtract 1 from broadcast ip <br />
+<br />
+To count down the first ip address in range just add 1 to ip address <br />
 
 
 
