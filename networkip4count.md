@@ -4,9 +4,15 @@
 
 The number of available host addresses in a subnet is 2 less (subnet address and broadcast address are reserved) 
 than the number of possible unique addresses in that subnet:
-
+<br /> 
+model to count how many hosts (N) in the newtork:
+<br /> 
 N = 2{32-CIDR}-2
+<br /> 
+2 times (32 bit ip4 - shortened submask number) - (first host and broadcast ip)
+<br /> 
 
+Octal convertions model 
 2{128} 2{64} 2{32} 2{16} 2{8} 2{4} 2{2} 2{1}
 
 <br />
@@ -46,24 +52,20 @@ N = 2{32-CIDR}-2
 
 <br />
 
-## Method 1 And operations
+## Method to get ip network, first host ip, last host ip, broadcast ip.
 
 We have netowork with ip4: 192.168.1.145 and mask: 255.255.255.128
 <br />
 <br />
 Converting to binary:
 <br />
-ip to binary <br />
-11000000.10101000.00000001.10010001 <br />
-subnet mask to binary  <br />
-11111111.11111111.11111111.100000000<br />
-<br />
-after we are doing and notation which get  1 * 1 = true others to false
-<br />
-11000000.10101000.00000001.10010001       AND Operations!
-11111111.11111111.11111111.100000000  
-<br />
-=
+
+|                      |         1 octal       |   2 octal            |   3 octal             |    4 octal            |
+|--------------------- | ----------------------|----------------------| --------------------- | --------------------- |
+| ip 4                 |  1 1 0 0 0 0 0 0      | 1 0 1 0 1 0 0 0      | 0  0 0 0 0 0 0 1      | 1 0 0 1 0 0 0 1       |
+| subnetmask           |  1 1 1 1 1 1 1 1      | 1 1 1 1 1 1 1 1      |  1 1 1 1 1 1 1 1      | 1 0 0 0 0 0 0 0       |
+
+
 <br />
 11000000.10101000.00000001.10000000
 <br />
@@ -74,11 +76,39 @@ Now we convert from binary to octal
 |     1 octal          |          2 octal      |   3 octal            |   4 octal             |
 |--------------------- | ----------------------|----------------------| --------------------- |
 | 128 64 32 16 8 4 2 1 |  128 64 32 16 8 4 2 1 | 128 64 32 16 8 4 2 1 | 128 64 32 16 8 4 2 1  |
-| 1   1   0  0 0 0 0 0 | 1    0 1  0  1 0 0 0  |  0   0  0  0 0 0 0 1 |  1  0   0  0 0 0 0 0  |
+| 1   1   0  0 0 0 0 0 |   1  0   1 0  1 0 0 0 |  0   0  0  0 0 0 0 1 |  1  0   0  0 0 0 0 0  |
+<br />
+Result: 192.168.1.128
+<br />
+###Broadcast number on NOT notations
+<br />
+To get broadcast number you need to do NOT notation on the mask which means we turn all 0 to 1 and all 1 to 0  
 <br />
 
+|                      |         1 octal       |   2 octal            |   3 octal             |    4 octal            |
+|--------------------- | ----------------------|----------------------| --------------------- | --------------------- |
+| subnetmask           |  1 1 1 1 1 1 1 1      | 1 1 1 1 1 1 1 1      | 1 1 1 1 1 1 1 1       | 1 0 0 0 0 0 0 0       |
+| NOT  notations       |  0 0 0 0 0 0 0 0      | 0 0 0 0 0 0 0 0      | 0 0 0 0 0 0 0 0       | 0 1 1 1 1 1 1 1       |
+<br />
+in result we are getting binary represation which we need to turn again to octal:
+<br />
 
-
+|                      |         1 octal       |   2 octal            |   3 octal             |    4 octal            |
+|--------------------- | ----------------------|---------------------- | ---------------------| --------------------- |
+|                      | 128 64 32 16 8 4 2 1  |  128 64 32 16 8 4 2 1 | 128 64 32 16 8 4 2 1 | 128 64 32 16 8 4 2 1  |
+|                      |  0  0  0  0  0 0 0 0  |   0  0  0   0 0 0 0 0 |  0   0  0  0 0 0 0 0 |  0   1  1  1 1 1 1 1  |
+<br />
+which in result will give: 0.0.0.127 
+<br />
+right now we suming previous ip which we get: 191.168.1.128 + 0.0.0.127 <br />
+result of broadcast ip: 191.168.1.255<br />
+<br />
+###How many hosts in range
+<br />
+<br />
+check the template up <br />
+2 * (32 bits ip  - 25 subnetmask shorted) - 2 for first and boradcast address = <br />
+2*(7)-2 = 128-2 = 126 hosts in range <br />
 
 
 
