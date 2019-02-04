@@ -46,16 +46,17 @@ N = 2{32-CIDR}-2
 
 <br />
 
-## Method 1 AND 
+## Method 1 And operations
+
 We have netowork with ip4: 192.168.1.145 and mask: 255.255.255.128
 <br />
 <br />
 Converting to binary:
 <br />
-ip to binary 
-11000000.10101000.00000001.10010001
-subnet mask to binary 
-11111111.11111111.11111111.100000000
+ip to binary <br />
+11000000.10101000.00000001.10010001 <br />
+subnet mask to binary  <br />
+11111111.11111111.11111111.100000000<br />
 <br />
 after we are doing and notation which get  1 * 1 = true others to false
 <br />
@@ -69,8 +70,11 @@ after we are doing and notation which get  1 * 1 = true others to false
 Now we convert from binary to octal
 <br />
 <br />
-128 64 32 16 8 4 2 1   128 64 32 16 8 4 2 1  128 64 32 16 8 4 2 1  128 64 32 16 8 4 2 1 <br />
-1   1   0  0 0 0 0 0   1    0 1  0  1 0 0 0   0   0  0  0 0 0 0 1   1  0   0  0 0 0 0 0
+
+|     1 octal          |          2 octal      |   3 octal            |   4 octal             |
+|--------------------- | ----------------------|----------------------| --------------------- |
+| 128 64 32 16 8 4 2 1 |  128 64 32 16 8 4 2 1 | 128 64 32 16 8 4 2 1 | 128 64 32 16 8 4 2 1  |
+| 1   1   0  0 0 0 0 0 | 1    0 1  0  1 0 0 0  |  0   0  0  0 0 0 0 1 |  1  0   0  0 0 0 0 0  |
 <br />
 
 
